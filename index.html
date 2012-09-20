@@ -1,10 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LxJS</title>
-    <script type="text/javascript" src="/lib/reveal.js"></script>
+  <title>LxJS</title>
+  <link href="lib/css/impress-demo.css" rel="stylesheet"/>
+  <link href="lib/css/LxJS.css" rel="stylesheet"/>
 </head>
 <body>
-
+<div id="impress">
+  <div class="step" data-x="0" data-y="0">
+    Modules <br>
+    keep me zen
+  </div>
+  <div class="step" data-x="0" data-y="700">
+    Xavier Cambar <br>
+    Software engineer @ Neolane <br>
+    <a href="http://twitter.com/xcambar">@xcambar</a><br>
+    <a href="http://github.com/xcambar">http://github.com/xcambar</a>
+  </div>
+  <div class="step slide" id="global_scope" data-x="0" data-y="1400">
+    <h1>global scope</h1>
+    <div class="member" style="float:left;left:-20px;top: 185px;position:relative;">Object</div>
+    <div class="member" style="float:left;left:45px;top: 193px;position:relative;font-size:35px;">Function</div>
+    <div class="member" style="float:left;left:65px;top: 200px;position:relative;font-size:30px;">Array</div>
+    <div class="member" style="float:left;left:75px;top: 205px;position:relative;font-size:27px;">console</div>
+    <div class="member" style="float:left;left:70px;top: 210px;position:relative;font-size:22px">localStorage</div>
+  </div>
+  <div class="step slide" id="overcrowded_scope" data-x="0" data-y="2400">
+    Variables are agoraphobic (or so I think)
+  </div>
+</div>
+<script type="text/javascript" src="./lib/js/impress.js"></script>
+<script>impress().init();</script>
 </body>
 </html>

@@ -1,0 +1,33 @@
+#global_scope {
+  background-image: url(../../img/1024px-Kyoto-Ryoan-Ji_MG_4512.jpeg);
+  background-position-y: 100px;
+  background-repeat: no-repeat;
+  -webkit-perspective: 1000;
+  -webkit-perspective-origin-x: 600px;
+  -webkit-perspective-origin-y: 300px;
+}
+
+#global_scope .member {
+  font-size: 40px;
+  color: #d3d3d3;
+  font-weight: bold;
+  text-shadow: 3px 0 0 grey;
+  -webkit-transform: rotateX(9deg) rotateY(40deg) rotateZ(-6deg);
+  -webkit-transition: 1.5s;
+  -moz-transition:    1.5s;
+  -ms-transition:     1.5s;
+  -o-transition:      1.5s;
+  transition:         1.5s;
+  opacity: 0;
+}
+
+#global_scope.present .member {
+  opacity: 1;
+}
+
+#overcrowded_scope {
+  background-image: url(../../img/OverCrowded.png);
+  background-position-y: 109px;
+  background-repeat: no-repeat;
+  border: 10px solid white;
+}

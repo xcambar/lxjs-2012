@@ -1,3 +1,37 @@
+.step.slide {
+  border: 10px solid white;
+  padding: 0;
+}
+
+.impress-enabled .step {
+  opacity: 1;
+}
+
+.part div {
+  width: 500px;
+  margin: 0 auto;
+}
+.part h1 {
+  text-align: center;
+  font-size: 70px;
+  line-height: initial;
+  padding: 30px 0 60px;
+}
+
+.step.slide h2 {
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-bottom: 30px;
+}
+
+.left {
+  float:left;
+}
+
+.half {
+  width: 50%;
+}
+
 #global_scope {
   background-image: url(../../img/1024px-Kyoto-Ryoan-Ji_MG_4512.jpeg);
   background-position-y: 100px;
@@ -12,7 +46,7 @@
   color: #d3d3d3;
   font-weight: bold;
   text-shadow: 3px 0 0 grey;
-  -webkit-transform: rotateX(9deg) rotateY(40deg) rotateZ(-6deg);
+  -webkit-transform: rotateX(9deg) rotateY(40deg) rotateZ(-5deg);
   -webkit-transition: 1.5s;
   -moz-transition:    1.5s;
   -ms-transition:     1.5s;
@@ -29,5 +63,15 @@
   background-image: url(../../img/OverCrowded.png);
   background-position-y: 109px;
   background-repeat: no-repeat;
-  border: 10px solid white;
+}
+
+#protect {
+
+}
+
+#protect .left {
+  background-image: url(../../img/protection.jpeg);
+  height: 570px;
+  background-size: cover;
+  margin-right: 30px;
 }

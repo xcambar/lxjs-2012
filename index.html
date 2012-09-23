@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LxJS</title>
+  <title>The lazy, the obsessive and the modules - LxJS 2012</title>
+  <script type="text/javascript" src="lib/rainbow/js/rainbow.js"></script>
+  <script type="text/javascript" src="lib/rainbow/js/language/generic.js"></script>
+  <script type="text/javascript" src="lib/rainbow/js/language/javascript.js"></script>
+  <link href="lib/rainbow/themes/pastie.css" rel="stylesheet"/>
   <link href="lib/css/impress-demo.css" rel="stylesheet"/>
   <link href="lib/css/LxJS.css" rel="stylesheet"/>
 </head>
 <body>
 <div id="impress">
   <div class="step" data-x="0" data-y="0">
-    Modules <br>
-    keep me zen
+    The lazy, <br>the obsessive <br>and the modules
   </div>
   <div class="step" data-x="0" data-y="700">
     Xavier Cambar <br>
@@ -17,16 +20,85 @@
     <a href="http://twitter.com/xcambar">@xcambar</a><br>
     <a href="http://github.com/xcambar">http://github.com/xcambar</a>
   </div>
-  <div class="step slide" id="global_scope" data-x="0" data-y="1400">
-    <h1>global scope</h1>
-    <div class="member" style="float:left;left:-20px;top: 185px;position:relative;">Object</div>
-    <div class="member" style="float:left;left:45px;top: 193px;position:relative;font-size:35px;">Function</div>
-    <div class="member" style="float:left;left:65px;top: 200px;position:relative;font-size:30px;">Array</div>
-    <div class="member" style="float:left;left:75px;top: 205px;position:relative;font-size:27px;">console</div>
-    <div class="member" style="float:left;left:70px;top: 210px;position:relative;font-size:22px">localStorage</div>
+  <div class="step slide part" id="the_maniac" data-x="0" data-y="1700">
+    <h1>The obsessive</h1>
+    <div>
+      <img src="img/noeuds.jpeg">
+    </div>
   </div>
-  <div class="step slide" id="overcrowded_scope" data-x="0" data-y="2400">
-    Variables are agoraphobic (or so I think)
+  <div class="step slide" id="global_scope" data-x="0" data-y="2700">
+    <h2>The global scope... initially</h2>
+    <div class="member" style="float:left;left:50px;top: 155px;position:relative;">Object</div>
+    <div class="member" style="float:left;left:115px;top: 163px;position:relative;font-size:35px;">Function</div>
+    <div class="member" style="float:left;left:135px;top: 170px;position:relative;font-size:30px;">Array</div>
+    <div class="member" style="float:left;left:145px;top: 175px;position:relative;font-size:27px;">console</div>
+    <div class="member" style="float:left;left:140px;top: 180px;position:relative;font-size:22px">localStorage</div>
+  </div>
+  <div class="step slide" id="overcrowded_scope" data-x="0" data-y="3700">
+    <h2>Variables are agoraphobic (or so I think)</h2>
+  </div>
+  <div class="step slide" data-x="1500" data-y="3700">
+    <h2>Code from hell</h2>
+    <pre><code data-language="javascript">
+for(var i = 0; i < stuff.length; i++) {
+  doSomethingAsync(function() {
+    if (i % 2) {
+      // Save the world
+    }
+  });
+}
+
+for (var i = 0; i < otherStuff.length; i++) {
+  doSomethingElseAsync(function() {
+    i = Math.pow(i, 2); // or anything else
+  });
+}
+    </code></pre>
+  </div>
+  <div class="step" data-x="0" data-y="3700"></div>
+  <div class="step slide" id="protect" data-x="0" data-y="4700">
+    <h2>Protect your variables</h2>
+    <div class="left half"></div>
+    <div>
+      <ul>
+        <li>Closures</li>
+        <li>&nbsp;</li>
+        <li>let <small>(ES6)</small></li>
+        <li>&nbsp;</li>
+        <li>Functional programming</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>&nbsp;</li>
+        <li>Modules</li>
+      </ul>
+    </div>
+  </div>
+  <div class="step slide" data-x="1500" data-y="4700">
+    <h2>Closures</h2>
+    <h2>aka <i>Where vars would hide in a hide-and-seek game</i></h2>
+    <pre><code data-language="javascript">
+      var getTimeZoneInfo = (function () {
+        var _cache = {}; //I'm soooo hidden!
+        return function (name, callback) { // I _am_ getTimeZoneInfo
+          if (name in _cache) {
+            callback(_cache[name]);
+          }
+          xhr('/tzInfo/' + name, function (data) {
+            callback(JSON.parse(data));
+          });
+        };
+      })();
+    </code></pre>
+  </div>
+  <div class="step" data-x="0" data-y="4700"></div>
+  <div class="step slide part" id="the_lazy" data-x="0" data-y="5700">
+    <h1>The lazy</h1>
+    <div>
+      <img src="./img/lazy.jpeg">
+    </div>
+  </div>
+  <div class="step slide" data-x="0" data-y="6700">
+
   </div>
 </div>
 <script type="text/javascript" src="./lib/js/impress.js"></script>

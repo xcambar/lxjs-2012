@@ -1,6 +1,7 @@
 .step.slide {
   border: 10px solid white;
   padding: 0;
+  overflow: hidden;
 }
 
 .impress-enabled .step {
@@ -8,8 +9,7 @@
 }
 
 .part div {
-  width: 500px;
-  margin: 0 auto;
+  overflow:hidden;
 }
 .part h1 {
   text-align: center;
@@ -70,7 +70,7 @@
 }
 
 #protect .left {
-  background-image: url(../../img/protection.jpeg);
+  background: url(../../img/protection.png) 0 -18px;
   height: 570px;
   background-size: cover;
   margin-right: 30px;

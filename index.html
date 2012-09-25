@@ -23,7 +23,7 @@
   <div class="step slide part" id="the_maniac" data-x="0" data-y="1700">
     <h1>The obsessive</h1>
     <div>
-      <img src="img/noeuds.jpeg">
+      <img style="width: 880px;top:-70px;position:relative;" src="img/noeuds.jpeg">
     </div>
   </div>
   <div class="step slide" id="global_scope" data-x="0" data-y="2700">
@@ -40,19 +40,20 @@
   <div class="step slide" data-x="1500" data-y="3700">
     <h2>Code from hell</h2>
     <pre><code data-language="javascript">
-for(var i = 0; i < stuff.length; i++) {
-  doSomethingAsync(function() {
-    if (i % 2) {
-      // Save the world
-    }
-  });
+for (var i = 0; i < 20; i++) {
+  var duration = parseInt(Math.random()*1000);
+  setTimeout(function () {
+   console.log(i);
+  }, duration);
 }
 
-for (var i = 0; i < otherStuff.length; i++) {
-  doSomethingElseAsync(function() {
-    i = Math.pow(i, 2); // or anything else
-  });
+for (var i = 0; i < 10; i++) {
+  var duration = parseInt(Math.random()*1000);
+  setTimeout(function () {
+    i -= parseInt(Math.random()*10);
+  }, duration);
 }
+console.log('i:', i, 'duration:', duration);
     </code></pre>
   </div>
   <div class="step" data-x="0" data-y="3700"></div>
@@ -63,9 +64,9 @@ for (var i = 0; i < otherStuff.length; i++) {
       <ul>
         <li>Closures</li>
         <li>&nbsp;</li>
-        <li>let <small>(ES6)</small></li>
-        <li>&nbsp;</li>
         <li>Functional programming</li>
+        <li>&nbsp;</li>
+        <li>let <small>(ES6)</small></li>
         <li>&nbsp;</li>
         <li>&nbsp;</li>
         <li>&nbsp;</li>
@@ -73,6 +74,7 @@ for (var i = 0; i < otherStuff.length; i++) {
       </ul>
     </div>
   </div>
+  <!--
   <div class="step slide" data-x="1500" data-y="4700">
     <h2>Closures</h2>
     <h2>aka <i>Where vars would hide in a hide-and-seek game</i></h2>
@@ -91,14 +93,36 @@ for (var i = 0; i < otherStuff.length; i++) {
     </code></pre>
   </div>
   <div class="step" data-x="0" data-y="4700"></div>
-  <div class="step slide part" id="the_lazy" data-x="0" data-y="5700">
+  -->
+  <div class="step slide part" id="the_module" data-x="0" data-y="5700">
+    <h1>The module</h1>
+    <div style="width:733px;margin: 0 auto;">
+      <img style="height: 550px;position:relative;top:-50px;" src="./img/module.jpeg">
+    </div>
+  </div>
+  <div class="step slide" data-x="0" data-y="6700">
+    <h2>WTF's tis shit ?</h2>
+    A module
+    <ul>
+      <li>MAY have a name</li>
+      <li>MAY have dependencies</li>
+      <li>MAY expose an API</li>
+      <li>MUST be context-free</li>
+    </ul>
+    A module loader
+    <ul>
+      <li>MUST resolve dependencies</li>
+      <li>MUST NOT expose modules publicly</li>
+      <li>SHOULD NOT expose its own API</li>
+      <li>SHOULD have an adaptative behaviour</li>
+    </ul>
+
+  </div>
+  <div class="step slide part" id="the_lazy" data-x="0" data-y="7700">
     <h1>The lazy</h1>
     <div>
       <img src="./img/lazy.jpeg">
     </div>
-  </div>
-  <div class="step slide" data-x="0" data-y="6700">
-
   </div>
 </div>
 <script type="text/javascript" src="./lib/js/impress.js"></script>

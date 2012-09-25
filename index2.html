@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The lazy, the obsessive and the modules - LxJS 2012</title>
+  <script type="text/javascript" src="lib/rainbow/js/rainbow.js"></script>
+  <script type="text/javascript" src="lib/rainbow/js/language/generic.js"></script>
+  <script type="text/javascript" src="lib/rainbow/js/language/javascript.js"></script>
+  <link href="lib/rainbow/themes/pastie.css" rel="stylesheet"/>
+  <link href="lib/css/impress-demo.css" rel="stylesheet"/>
+  <link href="lib/css/LxJS.css" rel="stylesheet"/>
+</head>
+<body>
+<div id="impress">
+  <div class="step" data-x="0" data-y="-1000">
+    The lazy, <br>the obsessive <br>and the modules
+  </div>
+  <div class="step" data-x="0" data-y="0">
+    Xavier Cambar <br>
+    Architecture- &amp; perf-freak @ Neolane <br>
+    <a href="http://twitter.com/xcambar">@xcambar</a><br>
+    <a href="http://github.com/xcambar">http://github.com/xcambar</a>
+  </div>
+  <div class="step slide" data-x="0" data-y="1000">
+    Application Development <br>
+    Common issues:
+    <ul>
+      <li>multiple files &rarr; dependency management</li>
+      <li>testing &rarr; independent components</li>
+      <li>security &rarr; minimal exposure of variables</li>
+    </ul>
+    Yay, Modules!
+  </div>
+  <div class="step slide" data-x="0" data-y="2000">
+    <h1>Modules, WTF's tis shit ?</h1>
+    A module
+    <ul>
+      <li>MAY have a name</li>
+      <li>MUST be context-free (runnable when only its dependencies are available)</li>
+      <li>SHOULD have the least side-effects possible</li>
+      <li>MAY have dependencies</li>
+      <li>MAY expose an API</li>
+    </ul>
+  </div>
+  <div class="step slide" data-x="0" data-y="3000">
+    <h1>Modules are easy in Javascript</h1>
+    <ul>
+      <li>var i = {a: function () { }, BASE_VALUE: 42}</li>
+      <li>IIFEs define modules</li>
+      <li>Any function with well-defined variables returning an Object</li>
+    </ul>
+  </div>
+  <div class="step slide" data-x="0" data-y="4000">
+    SCEPTICAL => NOT enough for the constraints above
+  </div>
+  <div class="step slide" data-x="0" data-y="5000">
+    A module loader
+    <ul>
+      <li>MUST resolve dependencies</li>
+      <li>MUST NOT expose modules publicly</li>
+      <li>SHOULD NOT expose its own API</li>
+      <li>SHOULD have an adaptative behaviour</li>
+    </ul>
+  </div>
+  <div class="step slide" data-x="0" data-y="6000">
+    <h1>Weapons of choice</h1>
+    Ext.Loader / YUI.loader / dojo.loader / require.js
+    commonJS
+    ECMAScript6:modules &larr; Woot!
+  </div>
+  <div class="step slide" data-x="0" data-y="7000">
+    basic XHR+Template example
+     => Separation of concerns
+  </div>
+  <div class="step slide" data-x="0" data-y="8000">
+    More complex example
+     => dependency management
+  </div>
+  <div class="step slide" data-x="0" data-y="9000">
+    <h1>Traps</h1>
+    <ul>
+      <li>cyclic dependencies</li>
+      <li>refactoring to modules</li>
+      <li>build process</li>
+      <li>architecture</li>
+    </ul>
+  </div>
+  <div class="step slide" data-x="0" data-y="10000">
+    Modules are coming. They're great! Get used to it!
+    Lazy => Dependency management, less writing
+    obsessive => Concerned are separated, variables are small-scoped
+    Not using them is like saying today "No, I won't use Array, thank you"
+    If you want to play with ES6, you can checkout those projects:
+    * Escodegen, Esprima, Harmonizr, Shepherd
+  </div>
+</div>
+<script type="text/javascript" src="./lib/js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>

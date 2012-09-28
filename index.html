@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
   <title>The lazy, the obsessive and the modules - LxJS 2012</title>
-  <script type="text/javascript" src="lib/rainbow/js/rainbow.js"></script>
-  <script type="text/javascript" src="lib/rainbow/js/language/generic.js"></script>
-  <script type="text/javascript" src="lib/rainbow/js/language/javascript.js"></script>
-  <link href="lib/rainbow/themes/pastie.css" rel="stylesheet"/>
   <link href="lib/css/impress-demo.css" rel="stylesheet"/>
   <link href="lib/css/LxJS.css" rel="stylesheet"/>
 </head>
@@ -16,13 +12,14 @@
   </div>
   <div class="step" data-x="0" data-y="0">
     Xavier Cambar <br>
-    Architecture- &amp; perf-freak @ Neolane <br>
+    Software engineer @ Neolane <br>
     <a href="http://twitter.com/xcambar">@xcambar</a><br>
     <a href="http://github.com/xcambar">http://github.com/xcambar</a>
+    <a href="http://xcambar.github.com/shepherd-js">&#x27A1;&nbsp;shepherd.js</a>
   </div>
   <div class="step slide" data-x="0" data-y="1000">
-    <h1>Application <br> development is hard</h1>
-    Common issues:
+    <h1>Application development <br>is like hiking</h1>
+    Be prepared for:
     <ul>
       <li>100k+ lines of code &rarr; many files &rarr; dependency management</li>
       <li>testing &rarr; independent, reusable components </li>
@@ -30,33 +27,45 @@
     </ul>
   </div>
   <div class="step slide" data-x="1500" data-y="1000">
-    <h1>Don't make it harder</h1>
+    <h1>Wear some good shoes</h1>
     <br><br>
     <h1> Use modules!</h1>
-    <div style="margin:110px 80px 0;">
-      <blockquote>A module accomplishes one function <br>and contains everything to accomplish this</blockquote>
-      <div class="signature">Jürgen Haas (The linux Dictionary)</div>
+  </div>
+  <div class="step slide" data-x="3000" data-y="1000">
+    <h1>Weapons of choice</h1>
+    Ext.Loader / YUI.loader / dojo.loader / require.js / ... <br>
+    &#x27A1;&#xA0; AMD is the big winner on the browser <br><br>
+    <small>commonJS rules on the server</small>
+
+    <h1>What if we look ahead ?</h1>
+    <p style="float:left;padding-top:40px;"><strong>Harmony (ECMAScript 6) modules</strong></p>
+    <div style="float: right;position:relative;top:-50px">
+      <img src="img/amazed.png" alt="Woooooooh" width="350">
     </div>
   </div>
   <div class="step slide" data-x="0" data-y="2000">
+    <h1>Modules need <br>to be demystified</h1>
+    <img src="./img/scared-meme.gif" alt="Scary"/>
+  </div>
+  <div class="step slide" data-x="0" data-y="3000">
     <h1>Modules, WTF's tis shit ?</h1>
+    <div style="font-size:90%;position: relative;width:60%;margin:-45px auto 40px;">
+      <blockquote>A module accomplishes one function <br>and contains everything to accomplish this</blockquote>
+      <div class="signature">Juergen Haas</div>
+    </div>
     <span style="padding-bottom: 5px;border-bottom: 2px solid #a9a9a9;">A module</span>
     <ul>
       <li>MAY have a name</li>
-      <li>MUST be context-free (runnable when only its dependencies are available)</li>
-      <li>SHOULD have the least side-effects possible</li>
+      <li>MUST be context-free (needs nothing but explicit imports)</li>
+      <li>MUST have no impact apart from its imports/exports</li>
       <li>MAY have dependencies</li>
       <li>MAY expose an API</li>
     </ul>
   </div>
-  <div class="step slide" data-x="0" data-y="3000">
-    <h1>Modules need to be demystified</h1>
-    <img src="./img/scared-meme.gif" alt="Scary"/>
-  </div>
   <div class="step slide" data-x="1500" data-y="3000">
     <h1>Module - most basic version</h1>
     <p>An object literal is the most simple form of a module: API exposed</p>
-    <p><span style="text-decoration: underline;">example:</span> An utility library</p>
+    <p><span class="underline">example:</span> An utility library</p>
     <br><br><br>
     <script src="https://gist.github.com/3792881.js"> </script>
   </div>
@@ -73,7 +82,20 @@
     </center>
   </div>
   <div class="step slide" data-x="0" data-y="5000">
-    <h1>About module loaders</h1>
+    <script src="https://gist.github.com/3793168.js"> </script>
+  </div>
+  <div class="step slide" data-x="0" data-y="6000">
+    <h1>Benefits</h1>
+    <ul>
+      <li>It is a NATIVE feature! No more 3rd party! (as great as they are)</li>
+      <li>Both server-side and client-side. Reuse your code!!</li>
+      <li>Imports are evaluated on their own scope chain</li>
+      <li>Nested modules</li>
+      <li>Custom loaders</li>
+    </ul>
+  </div>
+  <div class="step slide" data-x="0" data-y="7000">
+    <h1>Module loaders</h1>
     <ul>
       <li>MUST resolve dependencies</li>
       <li>MUST inject dependencies</li>
@@ -84,64 +106,71 @@
     <br><br>
     <p style="text-align: right;">... and THAT is a lot of work!</p>
   </div>
-  <div class="step slide" data-x="0" data-y="6000">
-    <h1>Weapons of choice</h1>
-    Ext.Loader / YUI.loader / dojo.loader / require.js / ... <br>
-    &#x27A1;&#xA0; AMD is the big winner on the browser <br><br>
-    <small>commonJS on the server</small>
-
-    <h1>What if we look ahead ?</h1>
-    <p style="float:left;padding-top:40px;"><strong>Harmony (ECMAScript 6) modules</strong></p>
-    <div style="float: right;">
-      <img src="img/amazed.png" alt="Woooooooh" width="300">
-    </div>
-  </div>
-  <div class="step slide" data-x="0" data-y="7000">
-    <script src="https://gist.github.com/3793168.js"> </script>
-  </div>
   <div class="step slide" data-x="0" data-y="8000">
-    <h1>Benefits</h1>
+    <h1>Custom loaders: <br> control the load process</h1>
+    Per Module/import, 1 to 3 phases apply:
     <ul>
-      <li>It is a NATIVE feature! No more 3rd party! (as great as they are)</li>
-      <li>Both server-side and client-side. Reutilisability!!</li>
-      <li>Nested modules</li>
-      <li>Resolution normalization ('../module.js' and 'module.js' may refer to the same module)</li>
-      <li>Translation allows to modify the code once fetched (tools, generators...)</li>
+      <li><strong>Resolution</strong> &#x27A1; Determine whether the module is already loaded </li>
+      <li><strong>Fetching</strong> &#x27A1; Redirect or reject the resource</li>
+      <li><strong>Translation</strong> &#x27A1; Modifiy the source before it's evaluated</li>
     </ul>
+    Translation hooks are processed in reverse-order (child-first)
   </div>
   <div class="step slide" data-x="0" data-y="9000">
     <h1>Traps</h1>
     <ul>
-      <li>Still a proposal - implement at own risk</li>
+      <li>Still a proposal - no complete implementation yet</li>
       <li>Architecture (eg. Cyclic dependencies)</li>
-      <li>Change management: Refactoring to modules</li>
-      <li>Build process (polyfill here)</li>
+      <li>Backward compatibility (feature detection + polyfill)</li>
     </ul>
+  </div>
+  <div class="step slide" data-x="1500" data-y="9000">
+    <h1>Feature detection of ES6 <br>(airport idea)</h1>
+    <pre>
+&lt;script type="text/harmony"&gt;var ES6Enabled = true;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  if (!ES6Enabled) {
+    // find &lt;script type="text/harmony"&gt; tags
+    // for each tag where src_attr as srcValue
+    // s6d.get(srcValue)
+  }
+&lt;/script&gt;
+    </pre>
   </div>
   <div class="step slide" data-x="0" data-y="10000">
     <h1>Wanna play along ? </h1>
+    <span class="underline">Official documentation</span>
+    <br>see http://wiki.ecmascript.org/doku.php?id={{param}}
+    <ul>
+      <li>Modules (param = harmony:modules)</li>
+      <li>Module loaders (param = harmony:modules_loaders)</li>
+    </ul>
+    <br>
+    <span class="underline">Third party tools/libraries</span>
     <ul>
       <li>Esprima has a Harmony branch</li>
       <li>Harmonizr is a transpiler from ES6 to ES5 (including modules)</li>
-      <li>Shepherd (by yours truly) allows live execution of ES6 modules</li>
+      <li>Shepherd (by yours truly) polyfills ES6 modules</li>
     </ul>
-    <!--Modules are coming. They're great! Get used to it!
-    Lazy => Dependency management, less writing
-    obsessive => Concerned are separated, variables are small-scoped
-    Not using them is like saying today "No, I won't use Array, thank you"
-    If you want to play with ES6, you can checkout those projects:
-    * Escodegen, Esprima, Harmonizr, Shepherd-->
   </div>
   <div class="step slide" data-x="0" data-y="11000">
     <h1>tl;dr</h1>
     <ul>
       <li><strong>Be lazy</strong>: let your app load its files by itself</li>
-      <li><strong>Be obsessive</strong>: Watch your vars</li>
+      <li><strong>Be obsessive</strong>: Watch your vars, keep your scopes safe</li>
       <li>&nbsp;</li>
-      <li>Use modules</li>
-      <li>Get used to the associate patterns</li>
-      <li>Look ahead to ES6 modules</li>
+      <li>Use modules for your app's sake</li>
+      <li>Get used to the associated patterns</li>
+      <li>Look ahead to ES6 modules, "<span style="text-decoration: line-through;">Winter</span> ES6 is coming"</li>
     </ul>
+  </div>
+  <div class="step" data-x="0" data-y="12000">
+    No questions: <br>come to me and let's talk!
+    <br>
+    <br>
+    Thanks!
+    <br>
+    <br><a href="http://xcambar.github.com/lxjs-2012">http://xcambar.github.com/lxjs-2012</a>
   </div>
 </div>
 <script type="text/javascript" src="./lib/js/impress.js"></script>

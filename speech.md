@@ -44,3 +44,10 @@ Complications
  * Build process
 
  * Passage à l'échelle
+
+
+## Resolution
+
+## Fetching
+
+## Translation

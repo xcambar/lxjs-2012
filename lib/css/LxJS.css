@@ -6,6 +6,10 @@ small {
   font-size: 50%;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .gist {
   font-size: 24px;
 }
@@ -13,6 +17,8 @@ small {
   border: 10px solid white;
   padding: 0;
   overflow: hidden;
+  background: url(../../img/lxjs_logo.jpeg) no-repeat white 100% 0;
+  background-size: 100px;
 }
 
 .impress-enabled .step {
